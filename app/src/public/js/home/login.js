@@ -11,10 +11,14 @@ function login() {
   };
 
   fetch("/login", {
+    //처음 매개변수 : 경로 두번째 매개변수:Object로 보냄
+    //
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(req),
-  });
+  })
+    .then((res) => res.json())
+    .then(console.log);
 }
