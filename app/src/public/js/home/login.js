@@ -1,7 +1,7 @@
 "use strict";
 const id = document.querySelector("#id"),
   psword = document.querySelector("#psword"),
-  loginBtn = document.querySelector("button");
+  loginBtn = document.querySelector("#button");
 loginBtn.addEventListener("click", login);
 
 function login() {
@@ -18,8 +18,8 @@ function login() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(req),
-  })
-    .then((res) => res.json())
+  }) //req를 보내기
+    .then((res) => res.json()) //res를 받아서 처리하는 과정
     .then((res) => {
       if (res.success) {
         location.href = "/";
